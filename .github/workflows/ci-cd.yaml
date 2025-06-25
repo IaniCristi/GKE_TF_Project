@@ -21,7 +21,7 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        docker build -t us-central1-docker.pkg.dev/level-climber-463415-v3/test-repo/test-app .
+        docker build -t us-central1-docker.pkg.dev/level-climber-463415-v3/test-repo/test-app ./app
         docker push us-central1-docker.pkg.dev/level-climber-463415-v3/test-repo/test-app
 
     - name: Deploy to GKE
