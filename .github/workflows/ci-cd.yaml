@@ -15,14 +15,14 @@ jobs:
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
       with:
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        project_id: level-climber-463415-v3
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
 
     - name: Build and Push Docker image
       run: |
-        docker build -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/hello-repo/hello-app .
-        docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/hello-repo/hello-app
+        docker build -t us-central1-docker.pkg.dev/level-climber-463415-v3/test-repo/test-app .
+        docker push us-central1-docker.pkg.dev/level-climber-463415-v3/test-repo/test-app
 
     - name: Deploy to GKE
       run: |
